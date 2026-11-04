@@ -5,133 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مدونتي - الصفحة الرئيسية</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-        }
-
-        /* شريط العنوان العلوي */
-        .header {
-            background-color: #ffffff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            position: relative;
-        }
-
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .menu-btn {
-            font-size: 24px;
-            color: #ff3366;
-            cursor: pointer;
-            border: none;
-            background: none;
-        }
-
-        .nav-menu {
-            display: none;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            right: 0;
-            background-color: #ffffff;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            flex-direction: column;
-            z-index: 100;
-        }
-
-        .nav-menu.active {
-            display: flex;
-        }
-
-        .nav-menu a {
-            padding: 15px 20px;
-            text-decoration: none;
-            color: #333;
-            border-bottom: 1px solid #eee;
-            font-weight: bold;
-        }
-
-        /* قسم المقالات في الصفحة الرئيسية */
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            margin-bottom: 20px;
-            font-size: 22px;
-            color: #222;
-            border-right: 4px solid #ff3366;
-            padding-right: 10px;
-        }
-
-        /* تصميم بطاقات المقالات */
-        .blog-card {
-            background: #ffffff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin-bottom: 25px;
-        }
-
-        .blog-content {
-            padding: 20px;
-        }
-
-        .blog-date {
-            font-size: 13px;
-            color: #888;
-            margin-bottom: 8px;
-        }
-
-        .blog-title {
-            font-size: 18px;
-            color: #222;
-            margin-bottom: 10px;
-            text-decoration: none;
-            display: block;
-            font-weight: bold;
-        }
-
-        .blog-excerpt {
-            font-size: 14px;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .read-more {
-            display: inline-block;
-            color: #ff3366;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        body { background-color: #f8f9fa; color: #333; }
+        .header { background-color: #ffffff; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: relative; }
+        .logo { font-size: 20px; font-weight: bold; color: #333; }
+        .menu-btn { font-size: 24px; color: #ff3366; cursor: pointer; border: none; background: none; }
+        .nav-menu { display: none; position: absolute; top: 60px; left: 0; right: 0; background-color: #ffffff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex-direction: column; z-index: 100; }
+        .nav-menu.active { display: flex; }
+        .nav-menu a { padding: 15px 20px; text-decoration: none; color: #333; border-bottom: 1px solid #eee; font-weight: bold; }
+        .container { max-width: 800px; margin: 30px auto; padding: 0 20px; }
+        .section-title { margin-bottom: 20px; font-size: 22px; color: #222; border-right: 4px solid #ff3366; padding-right: 10px; }
+        .blog-card { background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .blog-content { padding: 20px; }
+        .blog-date { font-size: 13px; color: #888; margin-bottom: 8px; }
+        .blog-title { font-size: 18px; color: #222; margin-bottom: 10px; text-decoration: none; display: block; font-weight: bold; }
+        .blog-excerpt { font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 15px; }
+        .read-more { display: inline-block; color: #ff3366; text-decoration: none; font-weight: bold; font-size: 14px; }
     </style>
 </head>
 <body>
 
-    <!-- الشريط العلوي -->
     <header class="header">
         <div class="logo">مدونتي</div>
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
         <nav class="nav-menu" id="navMenu">
             <a href="index.html">الصفحة الرئيسية</a>
             <a href="privacy-policy.html">سياسة الخصوصية</a>
@@ -141,16 +37,25 @@
         </nav>
     </header>
 
-    <!-- قائمة المقالات والمدونات -->
     <div class="container">
         <h2 class="section-title">أحدث المقالات</h2>
+
+        <!-- المقال الثاني الجديد -->
+        <article class="blog-card">
+            <div class="blog-content">
+                <div class="blog-date">نُشر بتاريخ 4 نوفمبر 2026</div>
+                <a href="post2.html" class="blog-title">روائع المطبخ الشعبي: حكايات النكهة والأصالة في الأطباق التقليدية</a>
+                <p class="blog-excerpt">اكتشف معنا سحر الأطباق الشعبية وعراقة المأكولات التقليدية التي تجمع العائلة حول مائدة مليئة بالحب والنكهات الشهية...</p>
+                <a href="post2.html" class="read-more">قراءة المزيد ←</a>
+            </div>
+        </article>
 
         <!-- المقال الأول -->
         <article class="blog-card">
             <div class="blog-content">
                 <div class="blog-date">نُشر بتاريخ 4 نوفمبر 2026</div>
-                <a href="post1.html" class="blog-title">مرحباً بك في أول مقال على المدونة</a>
-                <p class="blog-excerpt">هذا النص هو مثال لملخص المقال الأول الذي تعرّف فيه الزوار على محتوى مدونتك وما سينتظرهم من مواضيع قادمة...</p>
+                <a href="post1.html" class="blog-title">أسرار الطهي المنزلي: كيف تحول وجبتك العادية إلى تحفة فنية</a>
+                <p class="blog-excerpt">تعرف على أهم أسرار المطبخ المنزلي، وكيف تختار مكوناتك الطازجة وتوازن النكهات لتحصل على أطباق مذهلة...</p>
                 <a href="post1.html" class="read-more">قراءة المزيد ←</a>
             </div>
         </article>
