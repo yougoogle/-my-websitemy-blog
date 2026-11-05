@@ -5,67 +5,336 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مدونتي - الصفحة الرئيسية</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-        body { background-color: #f8f9fa; color: #333; }
-        .header { background-color: #ffffff; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: relative; }
-        .logo { font-size: 20px; font-weight: bold; color: #333; }
-        .menu-btn { font-size: 24px; color: #ff3366; cursor: pointer; border: none; background: none; }
-        .nav-menu { display: none; position: absolute; top: 60px; left: 0; right: 0; background-color: #ffffff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex-direction: column; z-index: 100; }
-        .nav-menu.active { display: flex; }
-        .nav-menu a { padding: 15px 20px; text-decoration: none; color: #333; border-bottom: 1px solid #eee; font-weight: bold; }
-        .container { max-width: 800px; margin: 30px auto; padding: 0 20px; }
-        .section-title { margin-bottom: 20px; font-size: 22px; color: #222; border-right: 4px solid #ff3366; padding-right: 10px; }
-        .blog-card { background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 25px; }
-        .blog-content { padding: 20px; }
-        .blog-date { font-size: 13px; color: #888; margin-bottom: 8px; }
-        .blog-title { font-size: 18px; color: #222; margin-bottom: 10px; text-decoration: none; display: block; font-weight: bold; }
-        .blog-excerpt { font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 15px; }
-        .read-more { display: inline-block; color: #ff3366; text-decoration: none; font-weight: bold; font-size: 14px; }
+        :root {
+            --primary-color: #d81b60;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --footer-bg: #1c1c1c;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-right, .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .site-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        /* Search Bar Drawer */
+        .search-container {
+            display: none;
+            background-color: #fff;
+            padding: 10px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .search-container.active {
+            display: block;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        /* Navigation Drawer */
+        nav.nav-menu {
+            display: none;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            padding: 10px 20px;
+        }
+
+        nav.nav-menu.active {
+            display: block;
+        }
+
+        nav.nav-menu a {
+            display: block;
+            padding: 8px 0;
+            color: var(--text-color);
+            text-decoration: none;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        /* Main Content */
+        container {
+            display: block;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: var(--text-color);
+            margin-bottom: 15px;
+            border-right: 4px solid var(--primary-color);
+            padding-right: 10px;
+        }
+
+        /* Post Card */
+        .post-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .post-date {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .post-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #222;
+            text-decoration: none;
+            display: block;
+        }
+
+        .post-snippet {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .post-footer-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 12px;
+            font-size: 14px;
+        }
+
+        .post-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .post-social-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .action-btn {
+            color: var(--primary-color);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--footer-bg);
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 15px;
+            margin-top: 40px;
+        }
+
+        .footer-copyright {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 14px;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-links span {
+            color: #666;
+        }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <div class="logo">مدونتي</div>
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
-        <nav class="nav-menu" id="navMenu">
-            <a href="index.html">الصفحة الرئيسية</a>
-            <a href="privacy-policy.html">سياسة الخصوصية</a>
-            <a href="about.html">من نحن</a>
-            <a href="contact.html">اتصل بنا</a>
-            <a href="terms.html">شروط الاستخدام</a>
-        </nav>
+    <!-- Header -->
+    <header>
+        <div class="header-right">
+            <button class="icon-btn" onclick="toggleMenu()" title="القائمة">☰</button>
+            <button class="icon-btn" onclick="toggleSearch()" title="بحث">🔍</button>
+        </div>
+        
+        <a href="index.html" class="site-title">مدونتي</a>
+
+        <div class="header-left">
+            <a href="javascript:history.back()" class="icon-btn" style="font-size: 15px;">خلف &gt;</a>
+        </div>
     </header>
 
-    <div class="container">
+    <!-- Search Input Area -->
+    <div class="search-container" id="searchContainer">
+        <input type="text" class="search-input" id="searchInput" placeholder="ابحث في المقالات..." onkeyup="filterPosts()">
+    </div>
+
+    <!-- Navigation Menu Area -->
+    <nav class="nav-menu" id="navMenu">
+        <a href="index.html">الصفحة الرئيسية</a>
+        <a href="privacy-policy.html">سياسة الخصوصية</a>
+        <a href="terms.html">شروط الاستخدام</a>
+        <a href="about.html">من نحن</a>
+        <a href="contact.html">تواصل معنا عبر الإيميل</a>
+    </nav>
+
+    <!-- Main Content Container -->
+    <container>
         <h2 class="section-title">أحدث المقالات</h2>
 
-        <!-- المقال الثاني الجديد -->
-        <article class="blog-card">
-            <div class="blog-content">
-                <div class="blog-date">نُشر بتاريخ 4 نوفمبر 2026</div>
-                <a href="post2.html" class="blog-title">روائع المطبخ الشعبي: حكايات النكهة والأصالة في الأطباق التقليدية</a>
-                <p class="blog-excerpt">اكتشف معنا سحر الأطباق الشعبية وعراقة المأكولات التقليدية التي تجمع العائلة حول مائدة مليئة بالحب والنكهات الشهية...</p>
-                <a href="post2.html" class="read-more">قراءة المزيد ←</a>
-            </div>
-        </article>
+        <div id="postsList">
+            <!-- Article 1 -->
+            <article class="post-card">
+                <div class="post-date">نُشر بتاريخ 4 نوفمبر 2026</div>
+                <a href="post2.html" class="post-title">روائع المطبخ الشعبي: حكايات النكهة والأصالة في الأطباق التقليدية</a>
+                <p class="post-snippet">اكتشف معنا سحر الأطباق الشعبية وعراقة المأكولات التقليدية التي تجمع العائلة حول مائدة مليئة بالحب والنكهات الشهية...</p>
+                <div class="post-footer-actions">
+                    <a href="post2.html" class="post-link">قراءة المزيد &larr;</a>
+                    <div class="post-social-actions">
+                        <button class="action-btn" onclick="sharePost('post2.html')">مشاركة</button>
+                        <button class="action-btn" onclick="openCommentModal()">إرسال تعليق</button>
+                    </div>
+                </div>
+            </article>
 
-        <!-- المقال الأول -->
-        <article class="blog-card">
-            <div class="blog-content">
-                <div class="blog-date">نُشر بتاريخ 4 نوفمبر 2026</div>
-                <a href="post1.html" class="blog-title">أسرار الطهي المنزلي: كيف تحول وجبتك العادية إلى تحفة فنية</a>
-                <p class="blog-excerpt">تعرف على أهم أسرار المطبخ المنزلي، وكيف تختار مكوناتك الطازجة وتوازن النكهات لتحصل على أطباق مذهلة...</p>
-                <a href="post1.html" class="read-more">قراءة المزيد ←</a>
-            </div>
-        </article>
+            <!-- Article 2 -->
+            <article class="post-card">
+                <div class="post-date">نُشر بتاريخ 4 نوفمبر 2026</div>
+                <a href="post1.html" class="post-title">أسرار الطهي المنزلي: كيف تحول وجبتك العادية إلى تحفة فنية</a>
+                <p class="post-snippet">تعرف على أهم أسرار المطبخ المنزلي، وكيف تختار مكوناتك الطازجة وتوازن النكهات لتحصل على أطباق مذهلة...</p>
+                <div class="post-footer-actions">
+                    <a href="post1.html" class="post-link">قراءة المزيد &larr;</a>
+                    <div class="post-social-actions">
+                        <button class="action-btn" onclick="sharePost('post1.html')">مشاركة</button>
+                        <button class="action-btn" onclick="openCommentModal()">إرسال تعليق</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </container>
 
-    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-copyright">
+            © جميع الحقوق محفوظة - مدونتي 2026
+        </div>
+        <div class="footer-links">
+            <a href="privacy-policy.html">سياسة الخصوصية</a>
+            <span>|</span>
+            <a href="terms.html">شروط الاستخدام</a>
+            <span>|</span>
+            <a href="https://instagram.com" target="_blank">إنستغرام</a>
+            <span>|</span>
+            <a href="contact.html">تواصل معنا عبر الإيميل</a>
+        </div>
+    </footer>
 
     <script>
         function toggleMenu() {
-            var menu = document.getElementById("navMenu");
-            menu.classList.toggle("active");
+            var nav = document.getElementById('navMenu');
+            nav.classList.toggle('active');
+        }
+
+        function toggleSearch() {
+            var search = document.getElementById('searchContainer');
+            search.classList.toggle('active');
+            if(search.classList.contains('active')){
+                document.getElementById('searchInput').focus();
+            }
+        }
+
+        function filterPosts() {
+            var input = document.getElementById('searchInput').value.toLowerCase();
+            var posts = document.getElementsByClassName('post-card');
+            for (var i = 0; i < posts.length; i++) {
+                var title = posts[i].getElementsByClassName('post-title')[0].innerText.toLowerCase();
+                var snippet = posts[i].getElementsByClassName('post-snippet')[0].innerText.toLowerCase();
+                if (title.includes(input) || snippet.includes(input)) {
+                    posts[i].style.display = "";
+                } else {
+                    posts[i].style.display = "none";
+                }
+            }
+        }
+
+        function sharePost(url) {
+            if (navigator.share) {
+                navigator.share({ title: 'مقالة من مدونتي', url: url });
+            } else {
+                navigator.clipboard.writeText(window.location.origin + '/' + url);
+                alert('تم نسخ رابط المقال!');
+            }
+        }
+
+        function openCommentModal() {
+            var comment = prompt("أكتب تعليقك هنا:");
+            if (comment) {
+                alert("شكراً لك! تم إرسال تعليقك بنجاح.");
+            }
         }
     </script>
 </body>
