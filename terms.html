@@ -3,22 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شروط الاستخدام</title>
+    <title>شروط الاستخدام - مدونتي</title>
+    <style>
+        :root { --primary-color: #d81b60; --bg-color: #f8f9fa; --text-color: #333; --card-bg: #ffffff; --footer-bg: #1c1c1c; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+        
+        header { background-color: #ffffff; border-bottom: 1px solid #e0e0e0; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+        .header-right, .header-left { display: flex; align-items: center; gap: 15px; }
+        .icon-btn { background: none; border: none; font-size: 20px; cursor: pointer; color: var(--text-color); display: flex; align-items: center; gap: 5px; text-decoration: none; font-weight: 500; }
+        .site-title { font-size: 22px; font-weight: bold; color: var(--text-color); text-decoration: none; }
+        
+        nav.nav-menu { display: none; background-color: #fff; border-bottom: 1px solid #eee; padding: 10px 20px; }
+        nav.nav-menu.active { display: block; }
+        nav.nav-menu a { display: block; padding: 8px 0; color: var(--text-color); text-decoration: none; border-bottom: 1px solid #f5f5f5; }
+
+        .content-container { max-width: 800px; margin: 30px auto; background: var(--card-bg); padding: 30px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        h1 { color: var(--text-color); margin-bottom: 20px; font-size: 24px; text-align: center; }
+        p { margin-bottom: 15px; color: #555; font-size: 15px; }
+
+        footer { background-color: var(--footer-bg); color: #ffffff; text-align: center; padding: 30px 15px; margin-top: 40px; }
+        .footer-copyright { margin-bottom: 15px; font-size: 14px; color: #ccc; }
+        .footer-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; font-size: 14px; }
+        .footer-links a { color: #fff; text-decoration: none; }
+        .footer-links span { color: #666; }
+    </style>
 </head>
 <body>
-    <h1>شروط الاستخدام</h1>
-    <p>أهلاً بك في موقعنا. باستخدامك لهذا الموقع، فإنك توافق على الالتزام بالشروط والأحكام التالية:</p>
 
-    <h3>1. قبول الشروط</h3>
-    <p>تصفحك للموقع واستخدامك لخدماته يعني موافقتك الكاملة على كافة الشروط المذكورة هنا.</p>
+    <!-- الهيدر العلوي لصفحة شروط الاستخدام -->
+    <header>
+        <div class="header-right">
+            <button class="icon-btn" onclick="toggleMenu()">☰</button>
+        </div>
+        <a href="index.html" class="site-title">مدونتي</a>
+        <div class="header-left">
+            <a href="index.html" class="icon-btn" style="font-size: 15px;">خلف &gt;</a>
+        </div>
+    </header>
 
-    <h3>2. الملكية الفكرية</h3>
-    <p>جميع المحتويات الموجودة على هذا الموقع هي ملك حصري للموقع، ولا يجوز نسخها أو إعادة نشرها بدون إذن كتابي مسبق.</p>
+    <nav class="nav-menu" id="navMenu">
+        <a href="index.html">الصفحة الرئيسية</a>
+        <a href="privacy-policy.html">سياسة الخصوصية</a>
+        <a href="terms.html">شروط الاستخدام</a>
+        <a href="about.html">من نحن</a>
+        <a href="contact.html">تواصل معنا عبر الإيميل</a>
+    </nav>
 
-    <h3>3. الاستخدام المقبول</h3>
-    <p>يُتوقع من المستخدمين استخدام الموقع لأغراض مشروعة وعدم نشر أي محتوى يضر بالموقع أو بالآخرين.</p>
+    <div class="content-container">
+        <h1>شروط الاستخدام</h1>
+        <p>أهلاً بك في موقعنا. باستخدامك لهذا الموقع، فإنك توافق على الالتزام بالشروط والأحكام التالية:</p>
 
-    <h3>4. التواصل</h3>
-    <p>إذا كان لديك أي سؤال حول الشروط، تواصل معنا عبر البريد: <strong>mohamed14gm@gmail.com</strong></p>
+        <h3>1. قبول الشروط</h3>
+        <p>تصفحك للموقع واستخدامك لخدماته يعني موافقتك الكاملة على كافة الشروط المذكورة هنا.</p>
+
+        <h3>2. الملكية الفكرية</h3>
+        <p>جميع المحتويات الموجودة على هذا الموقع هي ملك حصري للموقع، ولا يجوز نسخها أو إعادة نشرها بدون إذن كتابي مسبق.</p>
+
+        <h3>3. الاستخدام المقبول</h3>
+        <p>يُتوقع من المستخدمين استخدام الموقع لأغراض مشروعة وعدم نشر أي محتوى يضر بالموقع أو بالآخرين.</p>
+
+        <h3>4. التواصل</h3>
+        <p>إذا كان لديك أي سؤال حول الشروط، تواصل معنا عبر البريد: mohamed14gm@gmail.com</p>
+    </div>
+
+    <footer>
+        <div class="footer-copyright">© جميع الحقوق محفوظة - مدونتي 2026</div>
+        <div class="footer-links">
+            <a href="privacy-policy.html">سياسة الخصوصية</a><span>|</span>
+            <a href="terms.html">شروط الاستخدام</a><span>|</span>
+            <a href="https://instagram.com" target="_blank">إنستغرام</a><span>|</span>
+            <a href="contact.html">تواصل معنا عبر الإيميل</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
+    </script>
 </body>
 </html>
