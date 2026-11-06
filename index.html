@@ -2,28 +2,31 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="rklgyp0FhNVRLYia3n0d1zi1GPp1kq2u2WJHcy6y44">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مدونتي - الصفحة الرئيسية</title>
     <style>
         :root {
             --primary-color: #d81b60;
-            --bg-color: #f9f9fa;
+            --bg-color: #f8f9fa;
             --text-color: #333;
             --card-bg: #ffffff;
             --footer-bg: #1c1c1c;
         }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
         }
+
+        /* Header Styling */
         header {
             background-color: #ffffff;
             border-bottom: 1px solid #e0e0e0;
@@ -35,246 +38,313 @@
             top: 0;
             z-index: 100;
         }
-        .site-title {
-            font-size: 22px;
-            font-weight: bold;
-            color: var(--text-color);
-            text-decoration: none;
-        }
-        .header-icons {
+
+        .header-right, .header-left {
             display: flex;
             align-items: center;
             gap: 15px;
         }
+
         .icon-btn {
             background: none;
             border: none;
             font-size: 20px;
             cursor: pointer;
             color: var(--text-color);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            font-weight: 500;
         }
-        .nav-menu {
+
+        .site-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        /* Search Bar Drawer */
+        .search-container {
             display: none;
-            background: #fff;
+            background-color: #fff;
+            padding: 10px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .search-container.active {
+            display: block;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        /* Navigation Drawer */
+        nav.nav-menu {
+            display: none;
+            background-color: #fff;
             border-bottom: 1px solid #eee;
             padding: 10px 20px;
         }
-        .nav-menu.active {
+
+        nav.nav-menu.active {
             display: block;
         }
-        .nav-menu a {
+
+        nav.nav-menu a {
             display: block;
-            padding: 10px 0;
-            color: #333;
+            padding: 8px 0;
+            color: var(--text-color);
             text-decoration: none;
             border-bottom: 1px solid #f5f5f5;
         }
-        .search-box {
-            display: none;
-            padding: 10px 20px;
-            background: #fff;
-            border-bottom: 1px solid #ddd;
-        }
-        .search-box.active {
+
+        /* Main Content */
+        container {
             display: block;
-        }
-        .search-box input {
-            width: 100%;
-            padding: 8px 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .container {
             max-width: 800px;
             margin: 20px auto;
             padding: 0 15px;
         }
+
         .section-title {
             font-size: 20px;
+            color: var(--text-color);
+            margin-bottom: 15px;
             border-right: 4px solid var(--primary-color);
             padding-right: 10px;
-            margin-bottom: 20px;
-            color: #2c3e50;
         }
+
+        /* Post Card */
         .post-card {
             background: var(--card-bg);
+            border-radius: 10px;
             padding: 20px;
-            border-radius: 8px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
+
         .post-date {
-            color: #888;
             font-size: 13px;
+            color: #888;
             margin-bottom: 8px;
         }
-        .post-card h2 {
-            color: #2c3e50;
+
+        .post-title {
+            font-size: 18px;
             margin-bottom: 10px;
-            font-size: 19px;
+            color: #222;
+            text-decoration: none;
+            display: block;
         }
-        .post-card p {
-            margin-bottom: 15px;
+
+        .post-snippet {
             color: #555;
-            text-align: justify;
+            font-size: 14px;
+            margin-bottom: 15px;
         }
-        .post-footer {
+
+        .post-footer-actions {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #f0f0f0;
             padding-top: 12px;
-            margin-top: 15px;
+            font-size: 14px;
         }
-        .read-more {
+
+        .post-link {
             color: var(--primary-color);
             text-decoration: none;
             font-weight: bold;
         }
-        .action-links {
+
+        .post-social-actions {
             display: flex;
             gap: 15px;
         }
+
         .action-btn {
+            color: var(--primary-color);
             background: none;
             border: none;
-            color: #666;
             cursor: pointer;
             font-size: 14px;
         }
-        .action-btn:hover {
-            color: var(--primary-color);
-        }
+
+        /* Footer */
         footer {
             background-color: var(--footer-bg);
-            color: #fff;
+            color: #ffffff;
             text-align: center;
-            padding: 25px 15px;
+            padding: 30px 15px;
             margin-top: 40px;
+        }
+
+        .footer-copyright {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
             font-size: 14px;
         }
-        footer a {
-            color: #bbb;
+
+        .footer-links a {
+            color: #fff;
             text-decoration: none;
-            margin: 0 5px;
+        }
+
+        .footer-links span {
+            color: #666;
         }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
-        <div class="site-title">مدونتي</div>
-        <div class="header-icons">
-            <button class="icon-btn" onclick="toggleSearch()" title="بحث">🔍</button>
+        <div class="header-right">
             <button class="icon-btn" onclick="toggleMenu()" title="القائمة">☰</button>
+            <button class="icon-btn" onclick="toggleSearch()" title="بحث">🔍</button>
         </div>
+        
+        <a href="index.html" class="site-title">مدونتي</a>
+
+        <div class="header-left"></div>
     </header>
 
-    <div class="search-box" id="searchBox">
-        <input type="text" id="searchInput" onkeyup="filterPosts()" placeholder="ابحث في المقالات...">
+    <!-- Search Input Area -->
+    <div class="search-container" id="searchContainer">
+        <input type="text" class="search-input" id="searchInput" placeholder="ابحث في المقالات..." onkeyup="filterPosts()">
     </div>
 
+    <!-- Navigation Menu Area -->
     <nav class="nav-menu" id="navMenu">
         <a href="index.html">الصفحة الرئيسية</a>
         <a href="privacy-policy.html">سياسة الخصوصية</a>
         <a href="terms.html">شروط الاستخدام</a>
         <a href="about.html">من نحن</a>
+        <a href="contact.html">تواصل معنا عبر الإيميل</a>
     </nav>
 
-    <div class="container">
+    <!-- Main Content Container -->
+    <container>
         <h2 class="section-title">أحدث المقالات</h2>
-        
-        <!-- مقال 1 -->
-        <article class="post-card">
-            <div class="post-date">نشر بتاريخ 6 نوفمبر 2026</div>
-            <h2>سر السعادة في المطبخ: أسرار إعداد الوجبات الشهية بخطوات بسيطة</h2>
-            <p>يعتبر فن الطهي واحداً من أمتع الهوايات وأقربها لقلوب الجميع، حيث تتجسد الإبداعات في تحويل المكونات البسيطة إلى أطباق منزلية مذهلة تنبض بالنكهات الغنية. إن اختيار الخضروات الطازجة والاهتمام بتوازن البهارات يمثلون الفارق الحقيقي بين الوجبة العادية والوجبة الاستثنائية التي تجمع العائلة حول مائدة دافئة وممتعة، لتضفي أجواء من البهجة والسرور على السفرة اليومية لكل بيت عربي أصيل.</p>
-            <div class="post-footer">
-                <a href="post1.html" class="read-more">قراءة المزيد ←</a>
-                <div class="action-links">
-                    <button class="action-btn" onclick="sharePost()">مشاركة</button>
-                    <button class="action-btn" onclick="addComment()">إرسال تعليق</button>
+
+        <div id="postsList">
+            <!-- المقالة الأولى -->
+            <article class="post-card">
+                <div class="post-date">نُشر بتاريخ 5 نوفمبر 2026</div>
+                <a href="post1.html" class="post-title">سر السعادة في المطبخ: أسرار إعداد الوجبات الشهية بخطوات بسيطة</a>
+                <p class="post-snippet">يعتبر فن الطهي واحداً من أمتع الهوايات وأقربها لقلوب الجميع، حيث تتجسد الإبداعات في تحويل المكونات البسيطة إلى أطباق منزلية مذهلة تنبض بالنكهات الغنية...</p>
+                <div class="post-footer-actions">
+                    <a href="post1.html" class="post-link">قراءة المزيد &larr;</a>
+                    <div class="post-social-actions">
+                        <button class="action-btn" onclick="sharePost('post1.html')">مشاركة</button>
+                        <button class="action-btn" onclick="openCommentModal()">إرسال تعليق</button>
+                    </div>
                 </div>
-            </div>
-        </article>
+            </article>
 
-        <!-- مقال 2 -->
-        <article class="post-card">
-            <div class="post-date">نشر بتاريخ 5 نوفمبر 2026</div>
-            <h2>فن تحضير الحلويات الشرقية في المنزل بطعم ينافس أشهر المحلات</h2>
-            <p>تعتبر الحلويات الشرقية رمزاً من رموز الضيافة والكرم في عالمنا العربي، وتتميز بنكهاتها الغنية ورائحتها الزكية التي تملأ البيت بالدفء والبهجة. إن سر نجاح هذه الحلويات يكمن في دقة المقادير واتباع الخطوات الصحيحة في تحضير القطر واختيار السمن البلدي ذو الجودة العالية الذي يمنح الأطباق مذاقاً فريداً لا يُقاوم، سواء كنت تحضر الكنافة المقرمشة أو البسبوسة المرملة بكل دقة واحترافية عالية.</p>
-            <div class="post-footer">
-                <a href="post2.html" class="read-more">قراءة المزيد ←</a>
-                <div class="action-links">
-                    <button class="action-btn" onclick="sharePost()">مشاركة</button>
-                    <button class="action-btn" onclick="addComment()">إرسال تعليق</button>
+            <!-- المقالة الثانية -->
+            <article class="post-card">
+                <div class="post-date">نُشر بتاريخ 4 نوفمبر 2026</div>
+                <a href="post2.html" class="post-title">أسرار الطهي المنزلي: كيف تحول وجبتك العادية إلى تحفة فنية</a>
+                <p class="post-snippet">تعرف على أهم أسرار المطبخ المنزلي، وكيف تختار مكوناتك الطازجة وتوازن النكهات لتحصل على أطباق مذهلة...</p>
+                <div class="post-footer-actions">
+                    <a href="post2.html" class="post-link">قراءة المزيد &larr;</a>
+                    <div class="post-social-actions">
+                        <button class="action-btn" onclick="sharePost('post2.html')">مشاركة</button>
+                        <button class="action-btn" onclick="openCommentModal()">إرسال تعليق</button>
+                    </div>
                 </div>
-            </div>
-        </article>
+            </article>
 
-        <!-- مقال 3 -->
-        <article class="post-card">
-            <div class="post-date">نشر بتاريخ 4 نوفمبر 2026</div>
-            <h2>أسرار الطهي المنزلي: كيف تحول وجبتك العادية إلى تحفة فنية</h2>
-            <p>تعرف على أهم أسرار المطبخ المنزلي، وكيف تختار مكوناتك الطازجة وتوازن النكهات لتحصل على أطباق مذهلة. إن الطهي ليس مجرد إعداد للطعام بل هو شغف وتعبير عن الاهتمام بصحة ونشاط جميع أفراد الأسرة من خلال تقديم أطعمة صحية ولذيذة ومعدة بعناية فائقة تضمن الاستمتاع بكل وجبة، مما يجعل المطبخ هو قلب البيت النابض بالحياة والدفء المستمر.</p>
-            <div class="post-footer">
-                <a href="post3.html" class="read-more">قراءة المزيد ←</a>
-                <div class="action-links">
-                    <button class="action-btn" onclick="sharePost()">مشاركة</button>
-                    <button class="action-btn" onclick="addComment()">إرسال تعليق</button>
+            <!-- المقالة الثالثة -->
+            <article class="post-card">
+                <div class="post-date">نُشر بتاريخ 5 نوفمبر 2026</div>
+                <a href="post3.html" class="post-title">فن تحضير الحلويات الشرقية في المنزل بطعم ينافس أشهر المحلات</a>
+                <p class="post-snippet">تعتبر الحلويات الشرقية رمزاً من رموز الضيافة والكرم في عالمنا العربي، وتتميز بنكهاتها الغنية ورائحتها الزكية التي تملأ البيت بالدفء والبهجة...</p>
+                <div class="post-footer-actions">
+                    <a href="post3.html" class="post-link">قراءة المزيد &larr;</a>
+                    <div class="post-social-actions">
+                        <button class="action-btn" onclick="sharePost('post3.html')">مشاركة</button>
+                        <button class="action-btn" onclick="openCommentModal()">إرسال تعليق</button>
+                    </div>
                 </div>
-            </div>
-        </article>
+            </article>
+        </div>
+    </container>
 
-        <!-- مقال 4 -->
-        <article class="post-card">
-            <div class="post-date">نشر بتاريخ 4 نوفمبر 2026</div>
-            <h2>دليل التغذية الصحية وأسرار المأكولات الخفيفة والسريعة</h2>
-            <p>يتناول هذا المقال التوازن المثالي بين الطعم اللذيذ والقيمة الغذائية العالية في الوجبات اليومية، وكيفية إعداد ساندويتشات ومقبلات منزلية صحية وسريعة تناسب أوقات العمل والجدول اليومي المزدحم دون التضحية بجودة الطعام وطعمه الشهي، لضمان الحصول على طاقة متجددة وحيوية طوال اليوم وبأسهل الطرق المتاحة في أي مطبخ منزلي.</p>
-            <div class="post-footer">
-                <a href="post4.html" class="read-more">قراءة المزيد ←</a>
-                <div class="action-links">
-                    <button class="action-btn" onclick="sharePost()">مشاركة</button>
-                    <button class="action-btn" onclick="addComment()">إرسال تعليق</button>
-                </div>
-            </div>
-        </article>
-
-    </div>
-
+    <!-- Footer -->
     <footer>
-        <p>© جميع الحقوق محفوظة - مدونتي 2026</p>
-        <div>
-            <a href="privacy-policy.html">سياسة الخصوصية</a> | 
-            <a href="terms.html">شروط الاستخدام</a> | 
-            <a href="https://t.me/mohamed2026com" target="_blank">تليجرام</a>
+        <div class="footer-copyright">
+            © جميع الحقوق محفوظة - مدونتي 2026
+        </div>
+        <div class="footer-links">
+            <a href="privacy-policy.html">سياسة الخصوصية</a>
+            <span>|</span>
+            <a href="terms.html">شروط الاستخدام</a>
+            <span>|</span>
+            <a href="contact.html">تواصل معنا عبر الإيميل</a>
         </div>
     </footer>
 
     <script>
         function toggleMenu() {
-            document.getElementById('navMenu').classList.toggle('active');
+            var nav = document.getElementById('navMenu');
+            nav.classList.toggle('active');
         }
+
         function toggleSearch() {
-            document.getElementById('searchBox').classList.toggle('active');
+            var search = document.getElementById('searchContainer');
+            search.classList.toggle('active');
+            if(search.classList.contains('active')){
+                document.getElementById('searchInput').focus();
+            }
         }
+
         function filterPosts() {
             var input = document.getElementById('searchInput').value.toLowerCase();
             var posts = document.getElementsByClassName('post-card');
             for (var i = 0; i < posts.length; i++) {
-                var text = posts[i].innerText.toLowerCase();
-                posts[i].style.display = text.includes(input) ? "" : "none";
+                var title = posts[i].getElementsByClassName('post-title')[0].innerText.toLowerCase();
+                var snippet = posts[i].getElementsByClassName('post-snippet')[0].innerText.toLowerCase();
+                if (title.includes(input) || snippet.includes(input)) {
+                    posts[i].style.display = "";
+                } else {
+                    posts[i].style.display = "none";
+                }
             }
         }
-        function sharePost() {
+
+        function sharePost(url) {
             if (navigator.share) {
-                navigator.share({ title: document.title, url: window.location.href });
+                navigator.share({ title: 'مقالة من مدونتي', url: url });
             } else {
-                alert("تم نسخ رابط المقال!");
+                navigator.clipboard.writeText(window.location.origin + '/' + url);
+                alert('تم نسخ رابط المقال!');
             }
         }
-        function addComment() {
-            prompt("اكتب تعليقك هنا:");
+
+        function openCommentModal() {
+            var comment = prompt("أكتب تعليقك هنا:");
+            if (comment) {
+                alert("شكراً لك! تم إرسال تعليقك بنجاح.");
+            }
         }
     </script>
 </body>
