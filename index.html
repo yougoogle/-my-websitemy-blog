@@ -24,7 +24,6 @@
             color: var(--text-color);
             line-height: 1.6;
         }
-        /* الهيدر العلوي */
         header {
             background-color: #ffffff;
             border-bottom: 1px solid #e0e0e0;
@@ -37,7 +36,7 @@
             z-index: 100;
         }
         .site-title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             color: var(--text-color);
             text-decoration: none;
@@ -50,12 +49,10 @@
         .icon-btn {
             background: none;
             border: none;
-            font-size: 22px;
+            font-size: 20px;
             cursor: pointer;
             color: var(--text-color);
         }
-        
-        /* القائمة الجانبية المنزلقة */
         .nav-menu {
             display: none;
             background: #fff;
@@ -71,10 +68,7 @@
             color: #333;
             text-decoration: none;
             border-bottom: 1px solid #f5f5f5;
-            font-size: 16px;
         }
-
-        /* شريط البحث */
         .search-box {
             display: none;
             padding: 10px 20px;
@@ -89,10 +83,7 @@
             padding: 8px 12px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            font-size: 15px;
         }
-
-        /* حاوية المقالات */
         .container {
             max-width: 800px;
             margin: 20px auto;
@@ -109,7 +100,7 @@
             background: var(--card-bg);
             padding: 20px;
             border-radius: 8px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         .post-date {
@@ -119,49 +110,30 @@
         }
         .post-card h2 {
             color: #2c3e50;
-            margin-bottom: 12px;
-            font-size: 20px;
+            margin-bottom: 10px;
+            font-size: 19px;
         }
         .post-card p {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: #555;
-            text-align: justify;
         }
-        .read-more {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-        }
-
-        /* التذييل الأسود السفلي */
         footer {
             background-color: var(--footer-bg);
             color: #fff;
             text-align: center;
-            padding: 30px 15px;
+            padding: 25px 15px;
             margin-top: 40px;
-            font-size: 15px;
-        }
-        footer p {
-            margin-bottom: 12px;
-        }
-        footer .links {
-            margin-bottom: 12px;
+            font-size: 14px;
         }
         footer a {
-            color: #ddd;
+            color: #bbb;
             text-decoration: none;
             margin: 0 5px;
-        }
-        footer a:hover {
-            color: #fff;
         }
     </style>
 </head>
 <body>
 
-    <!-- الهيدر العلوي -->
     <header>
         <div class="site-title">مدونتي</div>
         <div class="header-icons">
@@ -170,93 +142,61 @@
         </div>
     </header>
 
-    <!-- شريط البحث (يظهر عند الضغط على العدسة) -->
     <div class="search-box" id="searchBox">
         <input type="text" id="searchInput" onkeyup="filterPosts()" placeholder="ابحث في المقالات...">
     </div>
 
-    <!-- القائمة الجانبية (تظهر عند الضغط على الثلاث شرط) -->
     <nav class="nav-menu" id="navMenu">
         <a href="index.html">الصفحة الرئيسية</a>
         <a href="privacy-policy.html">سياسة الخصوصية</a>
         <a href="terms.html">شروط الاستخدام</a>
         <a href="about.html">من نحن</a>
-        <a href="contact.html">تواصل معنا عبر الإيميل</a>
     </nav>
 
-    <!-- قائمة المقالات الـ 4 المخصصة للطعام -->
     <div class="container">
         <h2 class="section-title">أحدث المقالات</h2>
         
-        <!-- مقال 1 -->
-        <article class="post-card">
-            <div class="post-date">نشر بتاريخ 5 نوفمبر 2026</div>
-            <h2>سر السعادة في المطبخ: أسرار إعداد الوجبات الشهية بخطوات بسيطة</h2>
-            <p>يعتبر فن الطهي واحداً من أمتع الهوايات وأقربها لقلوب الجميع، حيث تتجسد الإبداعات في تحويل المكونات البسيطة إلى أطباق منزلية مذهلة تنبض بالنكهات الغنية. إن اختيار الخضروات الطازجة والاهتمام بتوازن البهارات يمثلون الفارق الحقيقي بين الوجبة العادية والوجبة الاستثنائية التي تجمع العائلة حول مائدة دافئة وممتعة...</p>
-            <a href="post1.html" class="read-more">قراءة المزيد ←</a>
-        </article>
-
-        <!-- مقال 2 -->
-        <article class="post-card">
-            <div class="post-date">نشر بتاريخ 5 نوفمبر 2026</div>
-            <h2>فن تحضير الحلويات الشرقية في المنزل بطعم ينافس أشهر المحلات</h2>
-            <p>تعتبر الحلويات الشرقية رمزا من رموز الضيافة والكرم في عالمنا العربي، وتتميز بنكهاتها الغنية ورائحتها الزكية التي تملأ البيت بالدفء والبهجة. إن سر نجاح هذه الحلويات يكمن في دقة المقادير واتباع الخطوات الصحيحة في تحضير القطر واختيار السمن البلدي عالي الجودة الذي يمنح الأطباق مذاقاً فريداً لا يُقاوم...</p>
-            <a href="post2.html" class="read-more">قراءة المزيد ←</a>
-        </article>
-
-        <!-- مقال 3 -->
         <article class="post-card">
             <div class="post-date">نشر بتاريخ 6 نوفمبر 2026</div>
-            <h2>أسرار الطهي المنزلي: كيف تحول وجبتك العادية إلى تحفة فنية</h2>
-            <p>تعرف على أهم أسرار المطبخ المنزلي، وكيف تختار مكوناتك الطازجة وتوازن النكهات لتحصل على أطباق مذهلة. إن الطهي ليس مجرد إعداد للطعام بل هو شغف وتعبير عن الاهتمام بصحة ونشاط جميع أفراد الأسرة من خلال تقديم أطعمة صحية ولذيذة ومعدة بعناية فائقة...</p>
-            <a href="post3.html" class="read-more">قراءة المزيد ←</a>
+            <h2>فن إدارة الوقت والاستفادة من اليوم</h2>
+            <p>التخطيط اليومي الناجح يعتمد بالأساس على تحديد الأولويات والابتعاد التام عن المشتتات الرقمية خلال فترات التركيز. عندما تضع جدولاً محداً لمهامك اليومية وتلتزم به، ستلاحظ زيادة ملحوظة في إنتاجيتك وقدرتك على تحقيق الأهداف الشخصية والمهنية بكفاءة عالية وبأقل قدر من التوتر والإجهاد النفسي.</p>
         </article>
 
-        <!-- مقال 4 -->
         <article class="post-card">
-            <div class="post-date">نشر بتاريخ 6 نوفمبر 2026</div>
-            <h2>دليل التغذية الصحية وأسرار المأكولات الخفيفة والسريعة</h2>
-            <p>يتناول هذا المقال التوازن المثالي بين الطعم اللذيذ والقيمة الغذائية العالية في الوجبات اليومية، وكيفية إعداد ساندويتشات ومقبلات منزلية صحية وسريعة تناسب أوقات العمل والجدول اليومي المزدحم دون التضحية بجودة الطعام وطعمه الشهي...</p>
-            <a href="post4.html" class="read-more">قراءة المزيد ←</a>
+            <div class="post-date">نشر بتاريخ 5 نوفمبر 2026</div>
+            <h2>أساسيات العناية بالصحة والنشاط اليومي</h2>
+            <p>الاهتمام بشرب كميات كافية من الماء يومياً والحصول على قسط وفير من النوم يمثلان حجر الزاوية في الحفاظ على الحيوية والنشاط البدني والذهني. إن تبني عادات صحية بسيطة ومستمرة يضمن لك التمتع بطاقة عالية طوال اليوم ويعزز من كفاءة الجهاز المناعي لمواجهة التحديات اليومية المختلفة.</p>
         </article>
 
+        <article class="post-card">
+            <div class="post-date">نشر بتاريخ 4 نوفمبر 2026</div>
+            <h2>أهمية القراءة والتطوير الذاتي المستمر</h2>
+            <p>القراءة المنتظمة تفتح آفاقاً جديدة وتساعد في بناء التفكير النقدي وتوسيع المدارك بشكل مستمر. خصص جزءاً قصيراً من وقتك اليومي لمطالعة الكتب والمقالات المفيدة، حيث تسهم هذه العادة البسيطة في إثراء حصيلتك المعرفية وتطوير مهاراتك الشخصية في مختلف مجالات الحياة.</p>
+        </article>
     </div>
 
-    <!-- التذييل السفلي المطابق للصورة تماماً -->
     <footer>
         <p>© جميع الحقوق محفوظة - مدونتي 2026</p>
-        <div class="links">
+        <div>
             <a href="privacy-policy.html">سياسة الخصوصية</a> | 
             <a href="terms.html">شروط الاستخدام</a> | 
             <a href="https://t.me/mohamed2026com" target="_blank">تليجرام</a>
         </div>
-        <div>
-            <a href="contact.html">تواصل معنا عبر الإيميل</a>
-        </div>
     </footer>
 
-    <!-- أكواد التشغيل والبحث والقائمة -->
     <script>
         function toggleMenu() {
-            var menu = document.getElementById('navMenu');
-            menu.classList.toggle('active');
+            document.getElementById('navMenu').classList.toggle('active');
         }
-
         function toggleSearch() {
-            var search = document.getElementById('searchBox');
-            search.classList.toggle('active');
+            document.getElementById('searchBox').classList.toggle('active');
         }
-
         function filterPosts() {
             var input = document.getElementById('searchInput').value.toLowerCase();
             var posts = document.getElementsByClassName('post-card');
             for (var i = 0; i < posts.length; i++) {
                 var text = posts[i].innerText.toLowerCase();
-                if (text.includes(input)) {
-                    posts[i].style.display = "";
-                } else {
-                    posts[i].style.display = "none";
-                }
+                posts[i].style.display = text.includes(input) ? "" : "none";
             }
         }
     </script>
