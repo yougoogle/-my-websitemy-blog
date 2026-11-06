@@ -1,34 +1,29 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta name="google-site-verification" content="rkLgypBFhNVRLYiaUn0dl2iLGPpiHq2uZWWJZHcyBz4" />
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>مدونتي - الصفحة الرئيسية</title>
-    
+    <meta name="google-site-verification" content="rklgyp0FhNVRLYia3n0d1zi1GPp1kq2u2WJHcy6y44">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدونتي - الصفحة الرئيسية</title>
     <style>
         :root {
             --primary-color: #d81b60;
-            --bg-color: #f8f9fa;
+            --bg-color: #f9f9fa;
             --text-color: #333;
             --card-bg: #ffffff;
             --footer-bg: #1c1c1c;
         }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
         }
-
-        /* Header Styling */
         header {
             background-color: #ffffff;
             border-bottom: 1px solid #e0e0e0;
@@ -40,319 +35,110 @@
             top: 0;
             z-index: 100;
         }
-
-        .header-right, .header-left {
+        .header-left {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-
         .icon-btn {
             background: none;
             border: none;
-            font-size: 20px;
+            font-size: 18px;
             cursor: pointer;
             color: var(--text-color);
-            display: flex;
-            align-items: center;
-            gap: 5px;
             text-decoration: none;
             font-weight: 500;
         }
-
         .site-title {
             font-size: 22px;
             font-weight: bold;
             color: var(--text-color);
             text-decoration: none;
         }
-
-        /* Search Bar Drawer */
-        .search-container {
-            display: none;
-            background-color: #fff;
-            padding: 10px 20px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .search-container.active {
-            display: block;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 10px 15px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 15px;
-            outline: none;
-        }
-
-        /* Navigation Drawer */
-        nav.nav-menu {
-            display: none;
-            background-color: #fff;
-            border-bottom: 1px solid #eee;
-            padding: 10px 20px;
-        }
-
-        nav.nav-menu.active {
-            display: block;
-        }
-
-        nav.nav-menu a {
-            display: block;
-            padding: 8px 0;
-            color: var(--text-color);
-            text-decoration: none;
-            border-bottom: 1px solid #f5f5f5;
-        }
-
-        /* Main Content */
-        container {
-            display: block;
+        .container {
             max-width: 800px;
             margin: 20px auto;
             padding: 0 15px;
         }
-
-        .section-title {
-            font-size: 20px;
-            color: var(--text-color);
-            margin-bottom: 15px;
-            border-right: 4px solid var(--primary-color);
-            padding-right: 10px;
-        }
-
-        /* Post Card */
         .post-card {
             background: var(--card-bg);
-            border-radius: 10px;
             padding: 20px;
+            border-radius: 8px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-
-        .post-date {
-            font-size: 13px;
-            color: #888;
-            margin-bottom: 8px;
-        }
-
-        .post-title {
-            font-size: 18px;
+        .post-card h2 {
+            color: #2c3e50;
             margin-bottom: 10px;
-            color: #222;
-            text-decoration: none;
-            display: block;
+            font-size: 20px;
         }
-
-        .post-snippet {
-            color: #555;
-            font-size: 14px;
+        .post-card p {
             margin-bottom: 15px;
+            color: #555;
         }
-
-        .post-footer-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid #f0f0f0;
-            padding-top: 12px;
-            font-size: 14px;
-        }
-
-        .post-link {
+        .read-more {
             color: var(--primary-color);
             text-decoration: none;
             font-weight: bold;
         }
-
-        .post-social-actions {
-            display: flex;
-            gap: 15px;
-        }
-
-        .action-btn {
-            color: var(--primary-color);
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        /* Footer */
         footer {
             background-color: var(--footer-bg);
-            color: #ffffff;
+            color: #fff;
             text-align: center;
-            padding: 30px 15px;
+            padding: 25px 15px;
             margin-top: 40px;
-        }
-
-        .footer-copyright {
-            margin-bottom: 15px;
             font-size: 14px;
-            color: #ccc;
         }
-
-        .footer-links {
+        footer div {
+            margin-top: 10px;
             display: flex;
             justify-content: center;
-            gap: 12px;
             flex-wrap: wrap;
-            font-size: 14px;
+            gap: 10px;
         }
-
-        .footer-links a {
-            color: #fff;
+        footer a {
+            color: #bbb;
             text-decoration: none;
         }
-
-        .footer-links span {
-            color: #666;
+        footer a:hover {
+            color: #fff;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header>
-        <div class="header-right">
-            <button class="icon-btn" onclick="toggleMenu()" title="القائمة">☰</button>
-            <button class="icon-btn" onclick="toggleSearch()" title="بحث">🔍</button>
-        </div>
-        
-        <a href="index.html" class="site-title">مدونتي</a>
-
         <div class="header-left">
-            <!-- بدون زر خلف تماماً -->
+            <a href="index.html" class="icon-btn">🏠 الرئيسية</a>
         </div>
+        <div class="site-title">مدونتي</div>
+        <div></div>
     </header>
 
-    <!-- Search Input Area -->
-    <div class="search-container" id="searchContainer">
-        <input type="text" class="search-input" id="searchInput" placeholder="ابحث في المقالات..." onkeyup="filterPosts()">
+    <div class="container">
+        <div class="post-card">
+            <h2>دليلك الشامل لتنظيم الوقت وزيادة الإنتاجية اليومية</h2>
+            <p>يعد الوقت أحد أثمن الموارد التي يمتلكها الإنسان في حياته، ولكنه في نفس الوقت أسرعها تسرسباً وضياعاً إذا لم يتم إدارته وتوجيهه بالشكل الصحيح...</p>
+            <a href="post4.html" class="read-more">قراءة المزيد ←</a>
+        </div>
+
+        <div class="post-card">
+            <h2>أهم النصائح اليومية للعناية بالصحة العامة والنشاط</h2>
+            <p>تعتبر العناية بالصحة العامة والبحث عن سبل الحفاظ على النشاط البدني والذهني من أهم الأولويات التي يجب أن يركز عليها الإنسان في حياته اليومية...</p>
+            <a href="post3.html" class="read-more">قراءة المزيد ←</a>
+        </div>
     </div>
 
-    <!-- Navigation Menu Area -->
-    <nav class="nav-menu" id="navMenu">
-        <a href="index.html">الصفحة الرئيسية</a>
-        <a href="privacy-policy.html">سياسة الخصوصية</a>
-        <a href="terms.html">شروط الاستخدام</a>
-        <a href="about.html">من نحن</a>
-        <a href="contact.html">تواصل معنا عبر الإيميل</a>
-    </nav>
-
-    <!-- Main Content Container -->
-    <container>
-        <h2 class="section-title">أحدث المقالات</h2>
-
-        <div id="postsList">
-            <!-- Article 1: المقالة الجديدة الخاصة بالطعام والوصفات (تم ربطها بـ post1.html مؤقتاً لتجنب خطأ 404) -->
-            <article class="post-card">
-                <div class="post-date">نُشر بتاريخ 5 نوفمبر 2026</div>
-                <a href="post1.html" class="post-title">سر السعادة في المطبخ: أسرار إعداد الوجبات الشهية بخطوات بسيطة</a>
-                <p class="post-snippet">يعتبر فن الطهي واحداً من أمتع الهوايات وأقربها لقلوب الجميع، حيث تتجسد الإبداعات في تحويل المكونات البسيطة إلى أطباق منزلية مذهلة تنبض بالنكهات الغنية. إن اختيار الخضروات الطازجة، والاهتمام بتوازن البهارات، واستخدام الأعشاب العطرية الطازجة يمثلون الفارق الحقيقي بين الوجبة العادية والوجبة الاستثنائية التي تجمع العائلة حول مائدة دافئة. في هذا المقال، نأخذك في جولة سريعة داخل عالم الطهي لنتعرف معاً على كيفية ابتكار وصفات جديدة وسريعة تضفي البهجة والسرور على سفرتك اليومية بكل سهولة واحترافية لتستمتع بأفضل الأوقات الممتعة مع عائلتك وأحبابك دائماً وأبداً...</p>
-                <div class="post-footer-actions">
-                    <a href="post1.html" class="post-link">قراءة المزيد &larr;</a>
-                    <div class="post-social-actions">
-                        <button class="action-btn" onclick="sharePost('post1.html')">مشاركة</button>
-                        <button class="action-btn" onclick="openCommentModal()">إرسال تعليق</button>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Article 2 -->
-            <article class="post-card">
-                <div class="post-date">نُشر بتاريخ 4 نوفمبر 2026</div>
-                <a href="post1.html" class="post-title">أسرار الطهي المنزلي: كيف تحول وجبتك العادية إلى تحفة فنية</a>
-                <p class="post-snippet">تعرف على أهم أسرار المطبخ المنزلي، وكيف تختار مكوناتك الطازجة وتوازن النكهات لتحصل على أطباق مذهلة...</p>
-                <div class="post-footer-actions">
-                    <a href="post1.html" class="post-link">قراءة المزيد &larr;</a>
-                    <div class="post-social-actions">
-                        <button class="action-btn" onclick="sharePost('post1.html')">مشاركة</button>
-                        <button class="action-btn" onclick="openCommentModal()">إرسال تعليق</button>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Article 3: المقالة الثالثة الجديدة -->
-            <article class="post-card">
-                <div class="post-date">نُشر بتاريخ 5 نوفمبر 2026</div>
-                <a href="post1.html" class="post-title">فن تحضير الحلويات الشرقية في المنزل بطعم ينافس أشهر المحلات</a>
-                <p class="post-snippet">تعتبر الحلويات الشرقية رمزاً من رموز الضيافة والكرم في عالمنا العربي، وتتميز بنكهاتها الغنية ورائحتها الزكية التي تملأ البيت بالدفء والبهجة. إن سر نجاح هذه الحلويات يكمن في دقة المقادير، واتباع الخطوات الصحيحة في تحضير القطر (الشراب)، واختيار السمن البلدي ذو الجودة العالية الذي يمنح الأطباق مذاقاً فريداً لا يُقاوم. سواء كنت تحضر الكنافة المقرمشة، أو البسبوسة المرملة، فإن العناية بالتفاصيل الصغيرة تضمن لك الحصول على نتيجة مذهلة تفاجئ بها عائلتك وضيوفك في كل المناسبات السعيدة والأوقات الخاصة...</p>
-                <div class="post-footer-actions">
-                    <a href="post1.html" class="post-link">قراءة المزيد &larr;</a>
-                    <div class="post-social-actions">
-                        <button class="action-btn" onclick="sharePost('post1.html')">مشاركة</button>
-                        <button class="action-btn" onclick="openCommentModal()">إرسال تعليق</button>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </container>
-
-    <!-- Footer -->
+    <!-- التذييل بعد حذف إنستغرام ووضع تليجرام ورابط التواصل -->
     <footer>
-        <div class="footer-copyright">
-            © جميع الحقوق محفوظة - مدونتي 2026
-        </div>
-        <div class="footer-links">
-            <a href="privacy-policy.html">سياسة الخصوصية</a>
-            <span>|</span>
-            <a href="terms.html">شروط الاستخدام</a>
-            <span>|</span>
-            <a href="https://instagram.com" target="_blank">إنستغرام</a>
-            <span>|</span>
+        <p>© جميع الحقوق محفوظة - مدونتي 2026</p>
+        <div>
+            <a href="privacy-policy.html">سياسة الخصوصية</a> | 
+            <a href="terms.html">شروط الاستخدام</a> | 
+            <a href="https://t.me/mohamed2026com" target="_blank">تليجرام</a> | 
             <a href="contact.html">تواصل معنا عبر الإيميل</a>
         </div>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            var nav = document.getElementById('navMenu');
-            nav.classList.toggle('active');
-        }
-
-        function toggleSearch() {
-            var search = document.getElementById('searchContainer');
-            search.classList.toggle('active');
-            if(search.classList.contains('active')){
-                document.getElementById('searchInput').focus();
-            }
-        }
-
-        function filterPosts() {
-            var input = document.getElementById('searchInput').value.toLowerCase();
-            var posts = document.getElementsByClassName('post-card');
-            for (var i = 0; i < posts.length; i++) {
-                var title = posts[i].getElementsByClassName('post-title')[0].innerText.toLowerCase();
-                var snippet = posts[i].getElementsByClassName('post-snippet')[0].innerText.toLowerCase();
-                if (title.includes(input) || snippet.includes(input)) {
-                    posts[i].style.display = "";
-                } else {
-                    posts[i].style.display = "none";
-                }
-            }
-        }
-
-        function sharePost(url) {
-            if (navigator.share) {
-                navigator.share({ title: 'مقالة من مدونتي', url: url });
-            } else {
-                navigator.clipboard.writeText(window.location.origin + '/' + url);
-                alert('تم نسخ رابط المقال!');
-            }
-        }
-
-        function openCommentModal() {
-            var comment = prompt("أكتب تعليقك هنا:");
-            if (comment) {
-                alert("شكراً لك! تم إرسال تعليقك بنجاح.");
-            }
-        }
-    </script>
 </body>
- <meta name="google-site-verification" content="rkLgypBFhNVRLYiaUn0dl2iLGPpiHq2uZWWJZHcyBz4" />   
 </html>
