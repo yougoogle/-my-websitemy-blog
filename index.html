@@ -114,8 +114,36 @@
             font-size: 19px;
         }
         .post-card p {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             color: #555;
+            text-align: justify;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 12px;
+            margin-top: 15px;
+        }
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .action-links {
+            display: flex;
+            gap: 15px;
+        }
+        .action-btn {
+            background: none;
+            border: none;
+            color: #666;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .action-btn:hover {
+            color: var(--primary-color);
         }
         footer {
             background-color: var(--footer-bg);
@@ -156,23 +184,62 @@
     <div class="container">
         <h2 class="section-title">أحدث المقالات</h2>
         
+        <!-- مقال 1 -->
         <article class="post-card">
             <div class="post-date">نشر بتاريخ 6 نوفمبر 2026</div>
-            <h2>فن إدارة الوقت والاستفادة من اليوم</h2>
-            <p>التخطيط اليومي الناجح يعتمد بالأساس على تحديد الأولويات والابتعاد التام عن المشتتات الرقمية خلال فترات التركيز. عندما تضع جدولاً محداً لمهامك اليومية وتلتزم به، ستلاحظ زيادة ملحوظة في إنتاجيتك وقدرتك على تحقيق الأهداف الشخصية والمهنية بكفاءة عالية وبأقل قدر من التوتر والإجهاد النفسي.</p>
+            <h2>سر السعادة في المطبخ: أسرار إعداد الوجبات الشهية بخطوات بسيطة</h2>
+            <p>يعتبر فن الطهي واحداً من أمتع الهوايات وأقربها لقلوب الجميع، حيث تتجسد الإبداعات في تحويل المكونات البسيطة إلى أطباق منزلية مذهلة تنبض بالنكهات الغنية. إن اختيار الخضروات الطازجة والاهتمام بتوازن البهارات يمثلون الفارق الحقيقي بين الوجبة العادية والوجبة الاستثنائية التي تجمع العائلة حول مائدة دافئة وممتعة، لتضفي أجواء من البهجة والسرور على السفرة اليومية لكل بيت عربي أصيل.</p>
+            <div class="post-footer">
+                <a href="post1.html" class="read-more">قراءة المزيد ←</a>
+                <div class="action-links">
+                    <button class="action-btn" onclick="sharePost()">مشاركة</button>
+                    <button class="action-btn" onclick="addComment()">إرسال تعليق</button>
+                </div>
+            </div>
         </article>
 
+        <!-- مقال 2 -->
         <article class="post-card">
             <div class="post-date">نشر بتاريخ 5 نوفمبر 2026</div>
-            <h2>أساسيات العناية بالصحة والنشاط اليومي</h2>
-            <p>الاهتمام بشرب كميات كافية من الماء يومياً والحصول على قسط وفير من النوم يمثلان حجر الزاوية في الحفاظ على الحيوية والنشاط البدني والذهني. إن تبني عادات صحية بسيطة ومستمرة يضمن لك التمتع بطاقة عالية طوال اليوم ويعزز من كفاءة الجهاز المناعي لمواجهة التحديات اليومية المختلفة.</p>
+            <h2>فن تحضير الحلويات الشرقية في المنزل بطعم ينافس أشهر المحلات</h2>
+            <p>تعتبر الحلويات الشرقية رمزاً من رموز الضيافة والكرم في عالمنا العربي، وتتميز بنكهاتها الغنية ورائحتها الزكية التي تملأ البيت بالدفء والبهجة. إن سر نجاح هذه الحلويات يكمن في دقة المقادير واتباع الخطوات الصحيحة في تحضير القطر واختيار السمن البلدي ذو الجودة العالية الذي يمنح الأطباق مذاقاً فريداً لا يُقاوم، سواء كنت تحضر الكنافة المقرمشة أو البسبوسة المرملة بكل دقة واحترافية عالية.</p>
+            <div class="post-footer">
+                <a href="post2.html" class="read-more">قراءة المزيد ←</a>
+                <div class="action-links">
+                    <button class="action-btn" onclick="sharePost()">مشاركة</button>
+                    <button class="action-btn" onclick="addComment()">إرسال تعليق</button>
+                </div>
+            </div>
         </article>
 
+        <!-- مقال 3 -->
         <article class="post-card">
             <div class="post-date">نشر بتاريخ 4 نوفمبر 2026</div>
-            <h2>أهمية القراءة والتطوير الذاتي المستمر</h2>
-            <p>القراءة المنتظمة تفتح آفاقاً جديدة وتساعد في بناء التفكير النقدي وتوسيع المدارك بشكل مستمر. خصص جزءاً قصيراً من وقتك اليومي لمطالعة الكتب والمقالات المفيدة، حيث تسهم هذه العادة البسيطة في إثراء حصيلتك المعرفية وتطوير مهاراتك الشخصية في مختلف مجالات الحياة.</p>
+            <h2>أسرار الطهي المنزلي: كيف تحول وجبتك العادية إلى تحفة فنية</h2>
+            <p>تعرف على أهم أسرار المطبخ المنزلي، وكيف تختار مكوناتك الطازجة وتوازن النكهات لتحصل على أطباق مذهلة. إن الطهي ليس مجرد إعداد للطعام بل هو شغف وتعبير عن الاهتمام بصحة ونشاط جميع أفراد الأسرة من خلال تقديم أطعمة صحية ولذيذة ومعدة بعناية فائقة تضمن الاستمتاع بكل وجبة، مما يجعل المطبخ هو قلب البيت النابض بالحياة والدفء المستمر.</p>
+            <div class="post-footer">
+                <a href="post3.html" class="read-more">قراءة المزيد ←</a>
+                <div class="action-links">
+                    <button class="action-btn" onclick="sharePost()">مشاركة</button>
+                    <button class="action-btn" onclick="addComment()">إرسال تعليق</button>
+                </div>
+            </div>
         </article>
+
+        <!-- مقال 4 -->
+        <article class="post-card">
+            <div class="post-date">نشر بتاريخ 4 نوفمبر 2026</div>
+            <h2>دليل التغذية الصحية وأسرار المأكولات الخفيفة والسريعة</h2>
+            <p>يتناول هذا المقال التوازن المثالي بين الطعم اللذيذ والقيمة الغذائية العالية في الوجبات اليومية، وكيفية إعداد ساندويتشات ومقبلات منزلية صحية وسريعة تناسب أوقات العمل والجدول اليومي المزدحم دون التضحية بجودة الطعام وطعمه الشهي، لضمان الحصول على طاقة متجددة وحيوية طوال اليوم وبأسهل الطرق المتاحة في أي مطبخ منزلي.</p>
+            <div class="post-footer">
+                <a href="post4.html" class="read-more">قراءة المزيد ←</a>
+                <div class="action-links">
+                    <button class="action-btn" onclick="sharePost()">مشاركة</button>
+                    <button class="action-btn" onclick="addComment()">إرسال تعليق</button>
+                </div>
+            </div>
+        </article>
+
     </div>
 
     <footer>
@@ -198,6 +265,16 @@
                 var text = posts[i].innerText.toLowerCase();
                 posts[i].style.display = text.includes(input) ? "" : "none";
             }
+        }
+        function sharePost() {
+            if (navigator.share) {
+                navigator.share({ title: document.title, url: window.location.href });
+            } else {
+                alert("تم نسخ رابط المقال!");
+            }
+        }
+        function addComment() {
+            prompt("اكتب تعليقك هنا:");
         }
     </script>
 </body>
