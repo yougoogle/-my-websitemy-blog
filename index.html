@@ -35,7 +35,7 @@
             top: 0;
             z-index: 100;
         }
-        .header-left {
+        .header-right, .header-left {
             display: flex;
             align-items: center;
             gap: 15px;
@@ -43,11 +43,10 @@
         .icon-btn {
             background: none;
             border: none;
-            font-size: 18px;
+            font-size: 20px;
             cursor: pointer;
             color: var(--text-color);
             text-decoration: none;
-            font-weight: 500;
         }
         .site-title {
             font-size: 22px;
@@ -66,6 +65,11 @@
             border-radius: 8px;
             margin-bottom: 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .post-date {
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 8px;
         }
         .post-card h2 {
             color: #2c3e50;
@@ -107,29 +111,45 @@
 </head>
 <body>
 
+    <!-- الهيدر بالشكل القديم الجميل مع زر البحث والقائمة والمدونة -->
     <header>
         <div class="header-left">
-            <a href="index.html" class="icon-btn">🏠 الرئيسية</a>
+            <a href="index.html" class="icon-btn" title="الرئيسية">🏠</a>
         </div>
-        <div class="site-title">مدونتي</div>
-        <div></div>
+        <a href="index.html" class="site-title">مدونتي</a>
+        <div class="header-right">
+            <button class="icon-btn" title="بحث">🔍</button>
+            <button class="icon-btn" title="القائمة">☰</button>
+        </div>
     </header>
 
+    <!-- المقالات الرئيسية (عرض 3 مقالات منظمة) -->
     <div class="container">
+        
         <div class="post-card">
+            <div class="post-date">نشر بتاريخ 6 نوفمبر 2026</div>
             <h2>دليلك الشامل لتنظيم الوقت وزيادة الإنتاجية اليومية</h2>
-            <p>يعد الوقت أحد أثمن الموارد التي يمتلكها الإنسان في حياته، ولكنه في نفس الوقت أسرعها تسرسباً وضياعاً إذا لم يتم إدارته وتوجيهه بالشكل الصحيح...</p>
+            <p>يعد الوقت أحد أثمن الموارد التي يمتلكها الإنسان في حياته، ولكنه في نفس الوقت أسرعها تسرسباً وضياعاً إذا لم يتم إدارته وتوجيهه بالشكل الصحيح والذكي لتحقيق أهدافك...</p>
             <a href="post4.html" class="read-more">قراءة المزيد ←</a>
         </div>
 
         <div class="post-card">
+            <div class="post-date">نشر بتاريخ 6 نوفمبر 2026</div>
             <h2>أهم النصائح اليومية للعناية بالصحة العامة والنشاط</h2>
-            <p>تعتبر العناية بالصحة العامة والبحث عن سبل الحفاظ على النشاط البدني والذهني من أهم الأولويات التي يجب أن يركز عليها الإنسان في حياته اليومية...</p>
+            <p>تعتبر العناية بالصحة العامة والبحث عن سبل الحفاظ على النشاط البدني والذهني من أهم الأولويات التي يجب أن يركز عليها الإنسان في حياته اليومية لضمان حياة حيوية...</p>
             <a href="post3.html" class="read-more">قراءة المزيد ←</a>
         </div>
+
+        <div class="post-card">
+            <div class="post-date">نشر بتاريخ 5 نوفمبر 2026</div>
+            <h2>سر السعادة في المطبخ: أسرار إعداد الوجبات الشهية بخطوات بسيطة</h2>
+            <p>يعتبر فن الطهي واحداً من أمتع الهوايات وأقربها لقلوب الجميع، حيث تتجسد الإبداعات في تحويل المكونات البسيطة إلى أطباق منزلية مذهلة تنبض بالنكهات الغنية...</p>
+            <a href="post1.html" class="read-more">قراءة المزيد ←</a>
+        </div>
+
     </div>
 
-    <!-- التذييل بعد حذف إنستغرام ووضع تليجرام ورابط التواصل -->
+    <!-- تذييل الصفحة (Footer) المضبط حسب رغبتك -->
     <footer>
         <p>© جميع الحقوق محفوظة - مدونتي 2026</p>
         <div>
