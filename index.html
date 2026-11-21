@@ -197,26 +197,20 @@
       color: var(--primary-color);
     }
 
-    /* شريط التنقل للصفحات وزر التالي */
+    /* شريط التنقل بين الصفحات وزر التالي */
     .custom-nav-bar {
       background-color: #ff0a3c;
       color: #ffffff;
       display: flex;
       align-items: center;
+      justify-content: center;
+      gap: 10px;
       padding: 14px 18px;
-      direction: rtl;
+      margin: 20px auto;
+      border-radius: 6px;
+      text-decoration: none;
       font-family: inherit;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .custom-nav-btn {
-      color: #ffffff;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      line-height: 1;
     }
 
     .custom-nav-title {
@@ -226,17 +220,13 @@
       margin: 0;
     }
 
-    .page-header-bar {
-      justify-content: flex-start;
-      gap: 16px;
-    }
-
-    .pagination-bar {
+    .custom-nav-btn {
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
       justify-content: center;
-      gap: 10px;
-      margin: 20px auto;
-      border-radius: 6px;
-      text-decoration: none;
+      font-size: 22px;
+      line-height: 1;
     }
 
     /* Footer */
@@ -288,6 +278,7 @@
     <a href="privacy-policy.html">سياسة الخصوصية</a>
     <a href="terms.html">شروط الاستخدام</a>
     <a href="about.html">من نحن</a>
+    <a href="contact.html">اتصل بنا</a>
     <a href="https://t.me/mohamed2026con" target="_blank">تواصل معنا عبر التيليجرام</a>
   </nav>
 
@@ -296,6 +287,48 @@
     <h2 class="section-title">أحدث المقالات</h2>
 
     <div id="postsList">
+      <!-- المقال السابع (الجديد) -->
+      <article class="post-card">
+        <div class="post-date">نُشر بتاريخ 21 نوفمبر 2026</div>
+        <a href="post7.html" class="post-title">فن تنسيق المائدة بين الطعام الصحي والمشروبات الطبيعية والفاكهة الموسمية</a>
+        <p class="post-snippet">تعرف على أسس تنسيق المائدة اليومية بين الأطباق المتوازنة والمشروبات الطبيعية والفاكهة الموسمية لحياة أكثر صحة وحيوية.</p>
+        <div class="post-footer-actions">
+          <a href="post7.html" class="post-link">قراءة المزيد &larr;</a>
+          <div class="post-social-actions">
+            <button class="action-btn" onclick="sharePost('post7.html')">مشاركة</button>
+            <button class="action-btn" onclick="openCommentModal()">إرسال تعليق</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- المقال السادس (الجديد) -->
+      <article class="post-card">
+        <div class="post-date">نُشر بتاريخ 21 نوفمبر 2026</div>
+        <a href="post6.html" class="post-title">دليلك الشامل للطعام والشراب والفاكهة: توازن النكهة والحيوية اليومية</a>
+        <p class="post-snippet">اكتشف كيف تجمع بين الوجبات المتوازنة والمشروبات الصحية والفاكهة الطازجة في روتين يومي بسيط يمنحك النكهة والحيوية.</p>
+        <div class="post-footer-actions">
+          <a href="post6.html" class="post-link">قراءة المزيد &larr;</a>
+          <div class="post-social-actions">
+            <button class="action-btn" onclick="sharePost('post6.html')">مشاركة</button>
+            <button class="action-btn" onclick="openCommentModal()">إرسال تعليق</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- المقال الخامس -->
+      <article class="post-card">
+        <div class="post-date">نُشر بتاريخ 19 نوفمبر 2026</div>
+        <a href="post5.html" class="post-title">أسرار الطعام والشراب المتوازن: رحلة يومية بين النكهة والصحة</a>
+        <p class="post-snippet">يُعد الطعام والشراب من أكثر التفاصيل اليومية حضوراً في حياة الإنسان فهما ليسا مجرد وسيلة لسد الجوع أو إرواء العطش...</p>
+        <div class="post-footer-actions">
+          <a href="post5.html" class="post-link">قراءة المزيد &larr;</a>
+          <div class="post-social-actions">
+            <button class="action-btn" onclick="sharePost('post5.html')">مشاركة</button>
+            <button class="action-btn" onclick="openCommentModal()">إرسال تعليق</button>
+          </div>
+        </div>
+      </article>
+
       <!-- المقال الأول -->
       <article class="post-card">
         <div class="post-date">نُشر بتاريخ 5 نوفمبر 2026</div>
@@ -353,8 +386,8 @@
       </article>
     </div>
 
-    <!-- زر التالي -->
-    <a href="post5.html" class="custom-nav-bar pagination-bar">
+    <!-- زر التالي للتنقل بين المقالات -->
+    <a href="post5.html" class="custom-nav-bar">
       <span class="custom-nav-title">التالي</span>
       <span class="custom-nav-btn">&#8594;</span>
     </a>
@@ -367,6 +400,10 @@
       <a href="privacy-policy.html">سياسة الخصوصية</a>
       <span>|</span>
       <a href="terms.html">شروط الاستخدام</a>
+      <span>|</span>
+      <a href="about.html">من نحن</a>
+      <span>|</span>
+      <a href="contact.html">اتصل بنا</a>
       <span>|</span>
       <a href="https://t.me/mohamed2026con" target="_blank">تواصل معنا عبر التيليجرام</a>
     </div>
@@ -401,10 +438,11 @@
     }
 
     function sharePost(url) {
+      var fullUrl = new URL(url, window.location.href).href;
       if (navigator.share) {
-        navigator.share({ title: 'مقال من مدونتي', url: url });
+        navigator.share({ title: 'مقال من مدونتي', url: fullUrl });
       } else {
-        navigator.clipboard.writeText(window.location.origin + '/' + url);
+        navigator.clipboard.writeText(fullUrl);
         alert('تم نسخ رابط المقال!');
       }
     }
