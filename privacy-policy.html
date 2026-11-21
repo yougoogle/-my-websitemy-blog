@@ -1,97 +1,181 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الخصوصية - مدونتي</title>
-    <style>
-        :root {
-            --primary-color: #d81b60;
-            --bg-color: #f8f9fa;
-            --text-color: #333;
-            --card-bg: #ffffff;
-            --footer-bg: #1c1c1c;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
-        
-        header {
-            background-color: #ffffff;
-            border-bottom: 1px solid #e0e0e0;
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .header-right, .header-left { display: flex; align-items: center; gap: 15px; }
-        .icon-btn { background: none; border: none; font-size: 20px; cursor: pointer; color: var(--text-color); display: flex; align-items: center; gap: 5px; text-decoration: none; font-weight: 500; }
-        .site-title { font-size: 22px; font-weight: bold; color: var(--text-color); text-decoration: none; }
-        
-        nav.nav-menu { display: none; background-color: #fff; border-bottom: 1px solid #eee; padding: 10px 20px; }
-        nav.nav-menu.active { display: block; }
-        nav.nav-menu a { display: block; padding: 8px 0; color: var(--text-color); text-decoration: none; border-bottom: 1px solid #f5f5f5; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سياسة الخصوصية - مدونتي</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        .content-container { max-width: 800px; margin: 30px auto; background: var(--card-bg); padding: 30px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-        h1 { color: var(--text-color); margin-bottom: 20px; font-size: 24px; text-align: center; }
-        p { margin-bottom: 15px; color: #555; font-size: 15px; }
-        
-        footer { background-color: var(--footer-bg); color: #ffffff; text-align: center; padding: 30px 15px; margin-top: 40px; }
-        .footer-copyright { margin-bottom: 15px; font-size: 14px; color: #ccc; }
-        .footer-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; font-size: 14px; }
-        .footer-links a { color: #fff; text-decoration: none; }
-        .footer-links span { color: #666; }
-    </style>
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    .top-back-bar {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 12px 18px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .top-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #d81b60;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .top-back-arrow {
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .page-container {
+      max-width: 820px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+
+    .page-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 25px 22px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      border: 1px solid #efefef;
+    }
+
+    .page-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #d81b60;
+      margin-bottom: 20px;
+      padding-right: 12px;
+      border-right: 4px solid #d81b60;
+    }
+
+    h2 {
+      font-size: 19px;
+      margin-top: 24px;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    p {
+      color: #4a4a4a;
+      font-size: 15.5px;
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+
+    ul {
+      padding-right: 22px;
+      margin-bottom: 16px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      color: #3d3d3d;
+      font-size: 15px;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- الهيدر العلوي لصفحة سياسة الخصوصية -->
-    <header>
-        <div class="header-right">
-            <button class="icon-btn" onclick="toggleMenu()">☰</button>
-        </div>
-        <a href="index.html" class="site-title">مدونتي</a>
-        <div class="header-left">
-            <a href="index.html" class="icon-btn" style="font-size: 15px;">خلف &gt;</a>
-        </div>
-    </header>
+  <div class="top-back-bar">
+    <a href="index.html" class="top-back-link">
+      <span class="top-back-arrow">&#8594;</span>
+      <span>العودة إلى الصفحة الرئيسية</span>
+    </a>
+  </div>
 
-    <nav class="nav-menu" id="navMenu">
-        <a href="index.html">الصفحة الرئيسية</a>
-        <a href="privacy-policy.html">سياسة الخصوصية</a>
-        <a href="terms.html">شروط الاستخدام</a>
-        <a href="about.html">من نحن</a>
-        <a href="contact.html">تواصل معنا عبر الإيميل</a>
-    </nav>
+  <div class="page-container">
+    <div class="page-card">
+      <h1 class="page-title">سياسة الخصوصية</h1>
 
-    <div class="content-container">
-        <h1>سياسة الخصوصية</h1>
-        <p>مرحباً بك في موقعنا. نحن نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية.</p>
-        
-        <h3>1. المعلومات التي نجمعها</h3>
-        <p>قد نجمع معلومات أساسية مثل بريدك الإلكتروني عندما تواصل معنا عبر البريد الإلكتروني أو نماذج الاتصال.</p>
-        
-        <h3>2. كيفية استخدام المعلومات</h3>
-        <p>نستخدم البيانات التي نجمعها فقط من أجل الرد على استفساراتك وتحسين تجربة المستخدم.</p>
-        
-        <h3>3. التواصل معنا</h3>
-        <p>إذا كان لديك أي استفسار، يمكنك التواصل معنا عبر البريد الإلكتروني: mohamed14gm@gmail.com</p>
+      <p>
+        مرحباً بك في موقعنا ومدونتنا. نحن نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية وبالتعامل معها بشفافية ومسؤولية عالية أثناء زيارتك وتصفحك لصفحات الموقع ومقالاته المتخصصة في الطعام والشراب المتوازن، وفنون الطهي المنزلي، واختيار وحفظ الخضروات والحلويات. توضح هذه الوثيقة طبيعة المعلومات التي قد يتم جمعها أو التعامل معها، وكيفية استخدامها، والضوابط التي نطبقها للحفاظ على خصوصية زوارنا.
+      </p>
+
+      <p>
+        إن استخدامك للموقع يعني موافقتك على هذه السياسة وما تتضمنه من إرشادات وتوضيحات. وإذا كنت لا توافق على أي جزء من هذه السياسة، نرجو منك التوقف عن استخدام الموقع أو عدم تزويدنا بأي بيانات شخصية عبر قنوات التواصل المتاحة.
+      </p>
+
+      <h2>1. المعلومات التي نجمعها</h2>
+      <p>
+        نحن نحرص على تقليل جمع البيانات إلى الحد الضروري فقط، ولا نطلب منك إنشاء حساب أو إدخال بيانات شخصية معقدة لمجرد قراءة المقالات وتصفح المدونة. ومع ذلك، قد يتم جمع بعض المعلومات الأساسية في الحالات التالية:
+      </p>
+      <ul>
+        <li><strong>المعلومات المقدمة طواعية عند التواصل:</strong> قد نجمع معلومات أساسية مثل بريدك الإلكتروني أو اسمك أو محتوى رسالتك عندما تتواصل معنا عبر البريد الإلكتروني أو قنوات التواصل المباشرة.</li>
+        <li><strong>معلومات التفاعل والاستفسارات:</strong> عندما ترسل سؤالاً حول وصفة أو مقال أو ملاحظة حول تجربة الاستخدام، فإننا نطلع على نص رسالتك وما يرتبط بها من تفاصيل تذكرها بنفسك.</li>
+        <li><strong>بيانات التصفح العامة والتقنية:</strong> مثل نوع المتصفح أو الجهاز أو لغة العرض أو الصفحات التي يتم طلبها لتحسين عرض المحتوى وتوافق الصفحة مع الشاشات المختلفة، دون أن نربط ذلك بهوية شخصية مباشرة ما لم تشارك بياناتك بنفسك.</li>
+      </ul>
+
+      <h2>2. كيفية استخدام المعلومات</h2>
+      <p>
+        نستخدم المعلومات التي تشاركها معنا أو التي تظهر أثناء تشغيل الموقع لأغراض مشروعة ومحددة تخدم تجربة القارئ وتطوير المدونة:
+      </p>
+      <ul>
+        <li><strong>الرد على الاستفسارات والرسائل:</strong> نستخدم بيانات التواصل فقط من أجل الرد على استفساراتك وملاحظاتك ومقترحاتك وتجربة المستخدم.</li>
+        <li><strong>تحسين المحتوى وتجربة التصفح:</strong> تساعدنا ملاحظات القراء والبيانات الفنية العامة على تحسين جودة المقالات، وتوضيح الخطوات والوصفات، وضمان سرعة وسلاسة التنقل بين الصفحات.</li>
+        <li><strong>الحفاظ على أمان الموقع واستقراره:</strong> نستخدم المعلومات اللازمة لاكتشاف الأعطال التقنية أو محاولات الاستخدام المسيء أو غير المصرح به وحماية الموقع من المشاكل التشغيلية.</li>
+        <li><strong>الامتثال للالتزامات النظامية:</strong> قد نراجع أو نحتفظ ببعض السجلات عند الضرورة للالتزام بالقوانين المعمول بها أو لحماية حقوق الموقع وزواره.</li>
+      </ul>
+
+      <h2>3. ملفات تعريف الارتباط وتخزين المتصفح</h2>
+      <p>
+        قد يعتمد متصفحك أو الأدوات التقنية المرتبطة بعرض صفحات الويب على ملفات تعريف الارتباط أو آليات التخزين المحلية لتحسين سرعة التحميل، وتذكر بعض تفضيلات العرض، وضمان عمل عناصر الصفحة بشكل سليم. يمكنك في أي وقت التحكم في ملفات تعريف الارتباط أو تعطيلها أو حذفها من خلال إعدادات المتصفح الخاص بجهازك، مع العلم أن تعطيل بعض العناصر التقنية قد يؤثر على طريقة عرض أو سلوك بعض المزايا.
+      </p>
+
+      <h2>4. مشاركة المعلومات والإفصاح عنها</h2>
+      <p>
+        نحن لا نقوم ببيع معلوماتك الشخصية أو تأجيرها أو المتاجرة بها لأي طرف ثالث تحت أي ظرف. ولا نشارك المعلومات التي ترسلها إلينا إلا في حالات محدودة وواضحة:
+      </p>
+      <ul>
+        <li><strong>الخدمات والروابط الخارجية:</strong> قد يحتوي الموقع على روابط تؤدي إلى مواقع أو خدمات خارجية—مثل روابط التواصل عبر التيليجرام أو إنستغرام أو منصات أخرى—تعمل وفق سياسات الخصوصية الخاصة بها، ولا نتحمل مسؤولية ممارسات تلك الجهات الخارجية تجاه بياناتك بعد مغادرتك لموقعنا.</li>
+        <li><strong>المتطلبات القانونية وحماية الحقوق:</strong> إذا طُلب منا قانونياً الإفصاح عن معلومات معينة، أو كان ذلك ضرورياً لحماية حقوق الموقع وممتلكاته وسلامة مستخدميه ومنع الأنشطة الضارة أو المخالفة.</li>
+      </ul>
+
+      <h2>5. أمن المعلومات والاحتفاظ بالبيانات</h2>
+      <p>
+        نتخذ إجراءات تنظيمية وتقنية مناسبة لحماية المعلومات التي تصل إلينا من الوصول غير المصرح به أو التعديل أو الإفصاح أو الفقدان. ومع ذلك، فإن نقل المعلومات عبر الإنترنت أو تخزينها إلكترونياً لا يمكن ضمان أمانه بنسبة مطلقة مئة بالمئة، ولذلك ننصح بعدم إرسال أي بيانات شديدة الحساسية أو سرية—مثل كلمات المرور أو البيانات المالية—عبر رسائل البريد الإلكتروني العادية.
+      </p>
+      <p>
+        نحتفظ بالمعلومات المرتبطة بالتواصل للمدة اللازمة لمعالجة طلبك أو متابعة المراسلات أو تحسين الخدمة، ثم نقوم بحذفها أو أرشفتها بشكل آمن عندما تنتفي الحاجة إليها ما لم يتطلب الأمر خلاف ذلك.
+      </p>
+
+      <h2>6. خصوصية الأطفال</h2>
+      <p>
+        يُعد محتوى المدونة عاماً وموجهاً للقراء والمهتمين بالطعام والتغذية، ولا نقصد جمع بيانات شخصية من الأطفال دون السن القانوني بشكل مباشر. وإذا علمنا أن طفلاً قد أرسل معلومات شخصية إلينا دون موافقة الولي أو الوصي، سنعمل على مراجعة الطلب وحذف تلك البيانات في أقرب وقت ممكن.
+      </p>
+
+      <h2>7. حقوقك وخياراتك فيما يتعلق ببياناتك</h2>
+      <p>
+        بصفتك زائراً أو مراسلاً للمدونة، لديك الحق في الاستفسار عن المعلومات التي شاركتها معنا، أو طلب تصحيح بيانات غير دقيقة أرسلتها مسبقاً، أو طلب حذف مراسلاتك وفق الإمكانات المتاحة، أو سحب موافقتك على استمرار التواصل. يمكنك ممارسة هذه الخيارات بكل بساطة عبر التواصل المباشر معنا.
+      </p>
+
+      <h2>8. التحديثات على سياسة الخصوصية</h2>
+      <p>
+        قد نقوم بتحديث أو تعديل هذه السياسة من وقت لآخر لتعكس أي تغييرات في أسلوب عمل المدونة، أو إضافة أقسام جديدة، أو مواكبة المتطلبات التقنية والقانونية. وعند إجراء أي تحديث، يتم نشر النسخة الجديدة في هذه الصفحة، ويُعد استمرارك في استخدام الموقع بعد نشر التعديلات قبولاً لها.
+      </p>
+
+      <h2>9. التواصل معنا</h2>
+      <p>
+        إذا كان لديك أي استفسار، أو ملاحظة، أو طلب يتعلق بسياسة الخصوصية أو بحماية معلوماتك الشخصية، يمكنك التواصل معنا عبر البريد الإلكتروني: <strong>mohamed14gm@gmail.com</strong>. يسعدنا استقبال رسائلك والرد عليها في أقرب وقت ممكن.
+      </p>
     </div>
+  </div>
 
-    <footer>
-        <div class="footer-copyright">© جميع الحقوق محفوظة - مدونتي 2026</div>
-        <div class="footer-links">
-            <a href="privacy-policy.html">سياسة الخصوصية</a><span>|</span>
-            <a href="terms.html">شروط الاستخدام</a><span>|</span>
-            <a href="https://instagram.com" target="_blank">إنستغرام</a><span>|</span>
-            <a href="contact.html">تواصل معنا عبر الإيميل</a>
-        </div>
-    </footer>
-
-    <script>
-        function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
-    </script>
 </body>
 </html>
